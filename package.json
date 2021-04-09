@@ -1,0 +1,18 @@
+{
+  "name": "ygobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Code.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "node-wikia": "0.0.3",
+    "request": "^2.83.0",
+    "telegraf": "^3.15.3"
+  }
+}
