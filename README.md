@@ -1,6 +1,7 @@
 # YGOCard_Bot (BETA)
 
 Source code of Yu-Gi-Oh! Card Telegram Bot write in Node.js.
+
 Thanks to : https://github.com/pit00/YGO-Bot
 
 ## Description
