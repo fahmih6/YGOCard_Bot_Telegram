@@ -4,7 +4,7 @@ Source code of Yu-Gi-Oh! Card Telegram Bot write in Node.js
 
 ## Description
 
-Fetch card image from Yu-Gi-Oh! (TCG)
+Fetch card image from YGOPRODeck
 
 ## Link
 
