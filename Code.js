@@ -12,26 +12,7 @@ const request = require("request");
 
   app.command("help", (ctx) => {
     ctx.reply(
-      "To search: /card [name].\nTo send a feedback: /feedback [suggestion].\nUse the complete name of the card (in lower case and without typo):\n/card exodia the forbidden one"
-    );
-  });
-
-  app.command("card", (ctx) => {
-    var key = ctx.message.text.replace(/[^\s]+ /, "").trim();
-
-    request(
-      "https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=" + key,
-      { json: true },
-      (err, res, body) => {
-        if (err) {
-          return console.log(err);
-        }
-        console.log(res.body.data[0].card_images[0].image_url);
-        ctx.replyWithPhoto({
-          url: res.body.data[0].card_images[0].image_url,
-          filename: res.body.data[0].name,
-        });
-      }
+      "To search: Use inline mode, mention the bot's username followed by card's name.\nexample : @YGOCard_bot Dark Magician.\n\nTo send a feedback: /feedback [suggestion]."
     );
   });
 
