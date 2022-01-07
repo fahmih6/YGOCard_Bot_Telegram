@@ -38,14 +38,16 @@ const request = require("request");
   app.on("inline_query", (ctx) => {
     const result = [];
 
-    if (ctx.inlineQuery.query != undefined) {
+    if (
+      ctx.inlineQuery.query != undefined &&
+      ctx.inlineQuery.query.length >= 3
+    ) {
       request(
         "https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=" +
           ctx.inlineQuery.query,
         { json: true },
         (err, res, body) => {
           if (err) {
-            console.log(err);
             ctx.answerInlineQuery(err);
           } else if (res.body.data != undefined) {
             res.body.data.forEach((element) => {
