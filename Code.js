@@ -29,6 +29,8 @@ const request = require("request");
         { json: true },
         (err, res, body) => {
           if (err) {
+            // Return empty result
+            ctx.answerInlineQuery([]);
             return;
           } else if (res.body.data != undefined) {
             res.body.data.forEach((element) => {
@@ -53,6 +55,7 @@ const request = require("request");
       );
     } else {
       // Do Nothing
+      ctx.answerInlineQuery([]);
       return;
     }
   });
