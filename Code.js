@@ -55,13 +55,15 @@ const request = require("request");
               let card_id = element.id;
               let image = element.card_images[0].image_url;
               let thumb = element.card_images[0].image_url_small;
-              result.push({
-                photo_url: image,
-                type: "photo",
-                title: name,
-                id: card_id,
-                thumb_url: thumb,
-              });
+              if (result.length < 50) {
+                result.push({
+                  photo_url: image,
+                  type: "photo",
+                  title: name,
+                  id: card_id,
+                  thumb_url: thumb,
+                });
+              }
             });
             // Using context shortcut
             ctx.answerInlineQuery(result);
