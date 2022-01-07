@@ -48,7 +48,7 @@ const request = require("request");
         { json: true },
         (err, res, body) => {
           if (err) {
-            ctx.answerInlineQuery(err);
+            return;
           } else if (res.body.data != undefined) {
             res.body.data.forEach((element) => {
               let name = element.name;
@@ -69,7 +69,8 @@ const request = require("request");
         }
       );
     } else {
-      ctx.answerInlineQuery(["Error"]);
+      // Do Nothing
+      return;
     }
   });
 
